@@ -199,7 +199,6 @@ cat testfile2
 date | tee testfile
 # Sun Oct 17 18:56:21 EDT 2010
 ```
-* 输出邮件发送 `mail`
 * 清屏 `clear`
 * 创建脚本菜单 `select`
 
@@ -256,6 +255,21 @@ for value in ${array_name[@]}; do
     echo value
 done
 ```
+
+## 网络通信
+* 输出邮件发送 `mail`
+* 输出网络接口配置 `ifconfig` or `ip addr`
+* 显示网络接口信息 `netstat` or `ss`
+* 文件下载 `wget`
+* http请求 `curl`, 此命令也包含文件下载功能
+* 验证服务器是否连通 `ping`
+* 跟踪网络访问路由 `tracepath` or `traceroute`
+* 结合`ping`和`tracepath`功能的工具 `mtr`
+* DNS查询 `host`
+* 查询指定站点的whois记录 `whois`
+* 网线是否插到在网络接口上 `ifplugstatus`
+* 网卡禁用和开启 `ifdown` and `ifup`
+* 释放IP地址并从DHCP服务器上获得一个新的 `dhclient -r`
 
 ## 结构化命令
 * 条件判断 `if-then-else`
