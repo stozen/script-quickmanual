@@ -14,6 +14,8 @@
 * 显示文件列表 `ls`
 * 文件查询 `find`
 * 别名 `alias`
+* 查看文件所在路径 `dirname`
+* 查看文件名(过滤路径) `basename`
 
 ## 文件查看
 * 文件内容查看 `cat`
@@ -50,6 +52,7 @@
 * 修改权限 `chmod`
 * 修改所属关系 `chown` or `chgrp`
 * 执行root命令 `sudo`
+* 显示用户id和所属组信息 `id`
 
 ## 压缩/归档
 * 归档 `tar`
@@ -79,7 +82,17 @@ tar -zxvf /usr/local/test.tar.gz
 * Redhat & CentOS `yum` or `rpm`
 * 查询rpm包是否安装 `rpm -q xxx`
 * 列出所有被安装的rpm包 `rpm -qa`
-* 手动安装 `./configure` then `make & make install`
+* 手动安装 `./configure` then `make -j & make install`
+* 系统服务 `chkconfig`
+
+```bash
+# 列出所有服务
+chkconfig --list
+# 增加httpd服务
+chkconfig --add httpd
+# 删除httpd服务
+chkconfig --del httpd
+```
 
 ## 后台运行
 * 控制台下后台模式运行脚本 `command &`
@@ -95,6 +108,7 @@ tar -zxvf /usr/local/test.tar.gz
 * 列出cron目录 `ls /etc/cron.*ly`
 * 运行服务器问题错过的的计划 `anacron`
 * 后台新窗口 `screen`
+* 创建新shell后台执行，完成后退出 `sh -c "cd /home; ls"`
 
 ## 系统监控
 * 虚拟内存 `cat /proc/meminfo`
@@ -107,6 +121,8 @@ tar -zxvf /usr/local/test.tar.gz
 * 查看登录用户 `who`
 * 查看所有进程和登陆用户 `lsof`
 * 捕捉信息 `trap`
+* 打印确切的系统信息 `uname -a`
+* 打印操作系统信息 `cat /etc/redhat-release`
 
 ## 日期/时间
 * 当前时间 `date`
@@ -157,6 +173,7 @@ do
 done
 ```
 * 命令行参数分析 `getopt`
+* 结果输出到和标准错误一样 `command >&2`
 * 重定向错误和数据 `return_number>`, 重定向所有输出 `&>`
 
 ```bash
@@ -230,6 +247,15 @@ echo The answer for this is $var3
 * 测试条件并返回退出状态码(常用在if里) `test condition` or `[ condition ]`
 * 双尖括号(针对数学表达式, 常用在if里) `(( expression ))`
 * 双方括号(针对字符串比较, 常用在if里) `[[ expression ]]`
+* 数组 `( )`
+
+```bash
+# 数组遍历
+array_name=(value0 value1 value2 value3 value4)
+for value in ${array_name[@]}; do
+    echo value
+done
+```
 
 ## 结构化命令
 * 条件判断 `if-then-else`
