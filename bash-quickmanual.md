@@ -85,6 +85,7 @@ tar -zxvf /usr/local/test.tar.gz
 * Redhat & CentOS `yum` or `rpm`
 * 查询rpm包是否安装 `rpm -q xxx`
 * 列出所有被安装的rpm包 `rpm -qa`
+* 安装RPM包 `rpm -ivh xxx`
 * 手动安装 `./configure` then `make -j & make install`
 * 系统服务 `chkconfig`
 
@@ -95,6 +96,11 @@ chkconfig --list
 chkconfig --add httpd
 # 删除httpd服务
 chkconfig --del httpd
+```
+* 创建、删除、修复、软连接，还能显示出已存在软连接的信息 `update-alternatives`
+```bash
+# 列出系统中所有安装java程序的路径，并选择默认程序
+update-alternatives --config java
 ```
 
 ## 后台运行
