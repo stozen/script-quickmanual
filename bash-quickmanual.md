@@ -86,6 +86,7 @@ tar -zxvf /usr/local/test.tar.gz
 * 查询rpm包是否安装 `rpm -q xxx`
 * 列出所有被安装的rpm包 `rpm -qa`
 * 安装RPM包 `rpm -ivh xxx`
+* 查看yum安装后，机器里都装了哪些东西 `rpm -ql xxx`
 * 手动安装 `./configure` then `make -j & make install`
 * 系统服务 `chkconfig`
 
