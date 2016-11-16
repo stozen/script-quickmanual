@@ -137,6 +137,7 @@ update-alternatives --config java
 ## 日期/时间
 * 当前时间 `date`
 * 休息暂停 `sleep`
+* 打印出一条命令或一个程序的执行时间 `time`
 
 ## 打印/输出
 * 打印 `printf` or `echo`
@@ -280,6 +281,18 @@ done
 * 网线是否插到在网络接口上 `ifplugstatus`
 * 网卡禁用和开启 `ifdown` and `ifup`
 * 释放IP地址并从DHCP服务器上获得一个新的 `dhclient -r`
+
+```bash
+## 常用ss命令
+ss -l #显示本地打开的所有端口
+ss -pl #显示每个进程具体打开的socket
+ss -t -a #显示所有tcp socket
+ss -u -a #显示所有的UDP Socekt
+ss -o state established '( dport = :smtp or sport = :smtp )' #显示所有已建立的SMTP连接
+ss -o state established '( dport = :http or sport = :http )' #显示所有已建立的HTTP连接
+ss -x src /tmp/.X11-unix/* #找出所有连接X服务器的进程
+ss -s #列出当前socket详细信息
+```
 
 ## 结构化命令
 * 条件判断 `if-then-else`
